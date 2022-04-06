@@ -4,10 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pageObjects.DashboardPage;
 
 public class DateTimePage {
 
-    public static WebDriver driver;
+    WebDriver driver;
+    public DashboardPage dashboardPage;
 
     public DateTimePage(WebDriver driver){
         this.driver = driver;
@@ -32,6 +34,8 @@ public class DateTimePage {
     WebElement fromMonth;
 
     public void goToSpecificPastDate(String date){
+        dashboardPage = new DashboardPage(driver);
+        dashboardPage.clickDateTimeButton();
         while (true){
             goToPreviousDate();
             String currentDate = fromMonth.getText();

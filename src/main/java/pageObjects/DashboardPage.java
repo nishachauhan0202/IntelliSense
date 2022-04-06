@@ -20,10 +20,11 @@ public class DashboardPage {
 
     public void verifyDashboardTitle(String expectedText){
         String actualText = dashboardTitle.getText();
+        System.out.println(actualText);
         Assert.assertEquals(actualText, expectedText);
     }
 
-    @FindBy(xpath = "//button[contains(@title, 'Date')]")
+    @FindBy(xpath = "//button[contains(@title, 'DATE')]")
     WebElement dateTimeButton;
 
     public void clickDateTimeButton(){

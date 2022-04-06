@@ -1,3 +1,5 @@
+package testClasses;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
+import widgetObjects.DateTimePage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -20,6 +23,7 @@ public class BaseTest {
     public static WebDriver driver;
     public LoginPage loginPage;
     public DashboardPage dashboardPage;
+    public DateTimePage dateTimePage;
 
 
     @BeforeMethod
@@ -30,15 +34,18 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
+        dateTimePage = new DateTimePage(driver);
         loginPage.inputEmailAddress(email);
         loginPage.inputPassword(password);
         loginPage.clickSignIn();
-        dashboardPage.clickDateTimeButton();
+        dashboardPage.verifyDashboardTitle("Test Project");
+        dateTimePage.goToSpecificPastDate("Nov 2020");
+        Thread.sleep(5000);
     }
 
     @AfterMethod
-    public void tearDown(ITestResult result){
-
+    public void tearDown(){
+        driver.quit();
     }
 
     public void setBrowser(){
