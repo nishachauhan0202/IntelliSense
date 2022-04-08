@@ -4,30 +4,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import utils.CommonMethods;
 
 public class DashboardPage {
 
-    WebDriver dashboardDriver;
+    WebDriver driver;
+    CommonMethods method;
 
     public DashboardPage(WebDriver driver){
-        dashboardDriver = driver;
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "//h1[normalize-space()='Test Project']")
-    WebElement dashboardTitle;
+    private WebElement dashboardTitle;
 
-    public void verifyDashboardTitle(String expectedText){
-        String actualText = dashboardTitle.getText();
-        System.out.println(actualText);
-        Assert.assertEquals(actualText, expectedText);
+    public String getDashboardTitle(){
+        return method.getElementText(dashboardTitle);
     }
 
     @FindBy(xpath = "//button[contains(@title, 'DATE')]")
-    WebElement dateTimeButton;
+    private WebElement dateTimeButton;
 
     public void clickDateTimeButton(){
-        dateTimeButton.click();
+        method.clickElement(dateTimeButton);
     }
 }

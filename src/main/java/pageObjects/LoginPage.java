@@ -4,10 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.CommonMethods;
 
 public class LoginPage {
 
     WebDriver driver;
+    CommonMethods method;
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -15,21 +17,21 @@ public class LoginPage {
     }
 
     @FindBy(xpath = "//input[@id='emailAddress']")
-    WebElement emailAddress;
+    private WebElement emailAddress;
 
     public void inputEmailAddress(String email){
-        emailAddress.sendKeys(email);
+        method.inputElement(emailAddress, email);
     }
 
     @FindBy(xpath = "//input[@id='password']")
-    WebElement userPassword;
+    private WebElement userPassword;
 
     public void inputPassword(String password){
         userPassword.sendKeys(password);
     }
 
     @FindBy(xpath = "//span[@class='MuiButton-label']")
-    WebElement signInButton;
+    private WebElement signInButton;
 
     public void clickSignIn(){
         signInButton.click();

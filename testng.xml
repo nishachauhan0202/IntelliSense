@@ -1,7 +1,10 @@
 <suite name="Example test run">
+    <Listeners>
+        <Listener class-name="testClasses.Listeners"/>
+    </Listeners>
     <test name="Simple Test">
         <classes>
-            <class name="testClasses.test_dashboard_001"/>
+            <class name="testClasses.PositiveTest"/>
         </classes>
     </test>
 </suite>
