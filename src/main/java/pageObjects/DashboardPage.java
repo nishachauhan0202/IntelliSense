@@ -4,12 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.CommonMethods;
+import org.testng.Assert;
 
 public class DashboardPage {
 
     WebDriver driver;
-    CommonMethods method;
 
     public DashboardPage(WebDriver driver){
         this.driver = driver;
@@ -20,13 +19,17 @@ public class DashboardPage {
     private WebElement dashboardTitle;
 
     public String getDashboardTitle(){
-        return method.getElementText(dashboardTitle);
+        return dashboardTitle.getText();
+    }
+
+    public void verifyDashboardTitle(String expectedTitle){
+        Assert.assertEquals(getDashboardTitle(), expectedTitle);
     }
 
     @FindBy(xpath = "//button[contains(@title, 'DATE')]")
     private WebElement dateTimeButton;
 
     public void clickDateTimeButton(){
-        method.clickElement(dateTimeButton);
+        dateTimeButton.click();
     }
 }

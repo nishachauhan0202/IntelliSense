@@ -4,12 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.CommonMethods;
 
 public class LoginPage {
 
     WebDriver driver;
-    CommonMethods method;
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -20,7 +18,7 @@ public class LoginPage {
     private WebElement emailAddress;
 
     public void inputEmailAddress(String email){
-        method.inputElement(emailAddress, email);
+        emailAddress.sendKeys(email);
     }
 
     @FindBy(xpath = "//input[@id='password']")

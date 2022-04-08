@@ -17,21 +17,21 @@ public class DateTimePage {
     }
 
     @FindBy(xpath = "//div[@selection='from']//div[@class='control-toggle']")
-    WebElement fromDate;
+    private WebElement fromDate;
 
     public void clickFromDate(){
         fromDate.click();
     }
 
     @FindBy(xpath = "//div[@class='date-control-dropdown']//button[1]")
-    WebElement previousDateArrow;
+    private WebElement previousDateArrow;
 
     public void goToPreviousDate(){
         previousDateArrow.click();
     }
 
     @FindBy(xpath = "//div[@selection='from']//child::span[@class='month']")
-    WebElement fromMonth;
+    private WebElement fromMonth;
 
     public void goToSpecificPastDate(String date){
         dashboardPage = new DashboardPage(driver);
