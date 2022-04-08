@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class DashboardPage {
 
@@ -15,15 +15,13 @@ public class DashboardPage {
         PageFactory.initElements(driver, this);
     }
 
+    SoftAssert softAssert = new SoftAssert();
+
     @FindBy(xpath = "//h1[normalize-space()='Test Project']")
     private WebElement dashboardTitle;
 
     public String getDashboardTitle(){
         return dashboardTitle.getText();
-    }
-
-    public void verifyDashboardTitle(String expectedTitle){
-        Assert.assertEquals(getDashboardTitle(), expectedTitle);
     }
 
     @FindBy(xpath = "//button[contains(@title, 'DATE')]")

@@ -9,14 +9,21 @@ import pageObjects.DashboardPage;
 public class DateTimePage {
 
     WebDriver driver;
-    public DashboardPage dashboardPage;
+    DashboardPage dashboardPage;
 
     public DateTimePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//div[@selection='from']//div[@class='control-toggle']")
+    @FindBy(xpath = "//a[normalize-space()='Historic']")
+    private WebElement historicDate;
+
+    public void clickHistoricLink(){
+        historicDate.click();
+    }
+
+    @FindBy(xpath = "//*[@selection='from']//*[@class='control-toggle']")
     private WebElement fromDate;
 
     public void clickFromDate(){
@@ -24,25 +31,25 @@ public class DateTimePage {
     }
 
     @FindBy(xpath = "//div[@class='date-control-dropdown']//button[1]")
-    private WebElement previousDateArrow;
+    private WebElement previousMonthArrow;
 
-    public void goToPreviousDate(){
-        previousDateArrow.click();
+    public void goToPreviousMonth(){
+        previousMonthArrow.click();
     }
 
     @FindBy(xpath = "//div[@selection='from']//child::span[@class='month']")
     private WebElement fromMonth;
 
-    public void goToSpecificPastDate(String date){
+    public void goToSpecificPastMonth(String month){
         dashboardPage = new DashboardPage(driver);
         dashboardPage.clickDateTimeButton();
-        while (true){
-            goToPreviousDate();
-            String currentDate = fromMonth.getText();
-            if(currentDate.equalsIgnoreCase(date)){
-                break;
-            }
-        }
+        clickHistoricLink();
+        clickFromDate();
+        String displayedMonth = null;
+        do {
+            goToPreviousMonth();
+            displayedMonth = fromMonth.getText();
+        } while (!displayedMonth.equalsIgnoreCase(month));
     }
 
 

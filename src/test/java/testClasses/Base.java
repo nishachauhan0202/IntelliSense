@@ -2,37 +2,28 @@ package testClasses;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageObjects.DashboardPage;
 import pageObjects.LoginPage;
 import widgetPageObjects.DateTimePage;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
 
-    public static WebDriver driver;
-    public LoginPage loginPage;
-    public DashboardPage dashboardPage;
-    public DateTimePage dateTimePage;
+    static WebDriver driver;
+    LoginPage loginPage;
+    DashboardPage dashboardPage;
+    DateTimePage dateTimePage;
     ExtentReports extent = new ExtentReports();
     ExtentSparkReporter spark = new ExtentSparkReporter("target/Test - Results.html");
     ExtentTest test;
@@ -52,7 +43,7 @@ public class Base {
     @BeforeMethod
     public void testSetup() {
         setBrowser();
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         driver.navigate().to(properties.getProperty("url"));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         userLogin(driver);
@@ -60,20 +51,11 @@ public class Base {
         extent.attachReporter(spark);
     }
 
-    @AfterMethod
-    public void tearDown(ITestResult result) {
-        if(result.getStatus() == ITestResult.FAILURE) {
-            test.info(result.getThrowable());
-            extent.flush();
-            driver.quit();
-        } else if (result.getStatus() == ITestResult.SKIP){
-            test.info(result.getThrowable());
-            extent.flush();
-            driver.quit();
-        } else {
-            extent.flush();
-            driver.quit();
-        }
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        driver.manage().getCookies();
+        extent.flush();
+        driver.quit();
     }
 
     public void setBrowser() {
@@ -102,7 +84,6 @@ public class Base {
     public void dataSetup(WebDriver driver) {
         dashboardPage = new DashboardPage(driver);
         dateTimePage = new DateTimePage(driver);
-        dashboardPage.verifyDashboardTitle(properties.getProperty("title"));
-        dateTimePage.goToSpecificPastDate("Nov 2020");
+        dateTimePage.goToSpecificPastMonth(properties.getProperty("month"));
     }
 }
