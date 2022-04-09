@@ -21,7 +21,7 @@ import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class Base {
+public class BaseTest {
 
     static WebDriver driver;
     LoginPage loginPage;

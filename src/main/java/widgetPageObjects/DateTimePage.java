@@ -150,7 +150,7 @@ public class DateTimePage {
     }
 
     @FindBy(xpath = "//div[@class='success show']")
-    private WebElement dateChanged;
+    public WebElement dateChanged;
 
     public String verifyDateChanged(){
         return dateChanged.getText();
