@@ -4,7 +4,8 @@
     </Listeners>
     <test name="Simple Test">
         <classes>
-            <class name="testClasses.PositiveTest"/>
+            <class name="testClasses.PositiveTestCases"/>
+            <class name="testClasses.NegativeTestCases"/>
         </classes>
     </test>
 </suite>

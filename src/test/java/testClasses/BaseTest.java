@@ -19,7 +19,6 @@ import widgetPageObjects.DateTimePage;
 import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
@@ -46,7 +45,7 @@ public class BaseTest {
     @BeforeMethod
     public void testSetup() {
         setBrowser();
-//        driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.navigate().to(properties.getProperty("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         setLoginPage(driver);
