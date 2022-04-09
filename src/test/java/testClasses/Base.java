@@ -2,12 +2,14 @@ package testClasses;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageObjects.DashboardPage;
@@ -15,6 +17,7 @@ import pageObjects.LoginPage;
 import widgetPageObjects.DateTimePage;
 
 import java.io.FileInputStream;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -45,15 +48,21 @@ public class Base {
         setBrowser();
 //        driver.manage().window().maximize();
         driver.navigate().to(properties.getProperty("url"));
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        userLogin(driver);
-        dataSetup(driver);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        setLoginPage(driver);
         extent.attachReporter(spark);
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        driver.manage().getCookies();
+    public void tearDown(ITestResult result) {
+        String methodName = result.getMethod().getMethodName();
+        test = extent.createTest(methodName).
+                assignDevice(properties.getProperty("device"));
+        if (result.isSuccess()){
+            test.log(Status.PASS, methodName+" - PASSED");
+        } else {
+            test.log(Status.FAIL, methodName+" - FAILED");
+        }
         extent.flush();
         driver.quit();
     }
@@ -74,16 +83,29 @@ public class Base {
         }
     }
 
-    public void userLogin(WebDriver driver) {
+    public void setLoginPage(WebDriver driver) {
         loginPage = new LoginPage(driver);
         loginPage.inputEmailAddress(properties.getProperty("email"));
         loginPage.inputPassword(properties.getProperty("password"));
         loginPage.clickSignIn();
     }
 
-    public void dataSetup(WebDriver driver) {
-        dashboardPage = new DashboardPage(driver);
+    public void setDateTimePage(WebDriver driver) {
         dateTimePage = new DateTimePage(driver);
-        dateTimePage.goToSpecificPastMonth(properties.getProperty("month"));
+        dashboardPage.clickDateTimeButton();
+        dateTimePage.clickHistoricLink();
+        dateTimePage.setFromPastMonth(
+                properties.getProperty("fromMonth"), properties.getProperty("fromDate"));
+        dateTimePage.setFromTime(
+                properties.getProperty("fromHour"), properties.getProperty("fromMinute"));
+        dateTimePage.setToPastMonth(
+                properties.getProperty("toMonth"), properties.getProperty("toDate"));
+        dateTimePage.setToTime(
+                properties.getProperty("toHour"), properties.getProperty("toMinute"));
+        dateTimePage.clickSubmitFromToDate();
+    }
+
+    public void setDashboardPage(WebDriver driver){
+        dashboardPage = new DashboardPage(driver);
     }
 }
