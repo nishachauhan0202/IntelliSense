@@ -20,7 +20,7 @@ public class PositiveTestCases extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(dependsOnMethods = "test_dashboard_title")
+    @Test
     @Description("TEST DESCRIPTION: Verify user can change the dates by clicking on Historic link" +
             " in Date & Time widget")
     @Epic("FUNCTIONAL TEST")
@@ -31,7 +31,7 @@ public class PositiveTestCases extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(dependsOnMethods = "test_dashboard_title")
+    @Test
     @Description("TEST DESCRIPTION: Verify user can make the current Dashboard default for the " +
             "project")
     @Epic("FUNCTIONAL TEST")
