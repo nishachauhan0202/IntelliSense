@@ -15,6 +15,7 @@ public class NegativeTestCases extends BaseTest {
     @Epic("FUNCTIONAL TEST")
     public void test_instrumentation_new_value_negative() {
         setDashboardPage(driver);
+        setDateTimePage(driver);
         dashboardPage.clickAddInstrumentationValue();
         dashboardPage.clickSubmitNewValue();
         String actualMessage = dashboardPage.alertMessageDisplayed();
@@ -29,6 +30,7 @@ public class NegativeTestCases extends BaseTest {
     @Epic("FUNCTIONAL TEST")
     public void test_create_duplicate_dashboard_without_name(){
         setDashboardPage(driver);
+        setDateTimePage(driver);
         dashboardPage.clickCreateDuplicateDashboard();
         dashboardPage.clickOkForDuplicateDashboard();
         softAssert.assertTrue(
