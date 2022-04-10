@@ -1,15 +1,10 @@
 package testClasses;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageObjects.DashboardPage;
@@ -26,9 +21,6 @@ public class BaseTest {
     LoginPage loginPage;
     DashboardPage dashboardPage;
     DateTimePage dateTimePage;
-    ExtentReports extent = new ExtentReports();
-    ExtentSparkReporter spark = new ExtentSparkReporter("target/Test - Results.html");
-    ExtentTest test;
     Properties properties = new Properties();
     FileInputStream fileInputStream;
 
@@ -49,20 +41,10 @@ public class BaseTest {
         driver.navigate().to(properties.getProperty("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         setLoginPage(driver);
-        extent.attachReporter(spark);
     }
 
     @AfterMethod(alwaysRun = true)
-    public void tearDown(ITestResult result) {
-        String methodName = result.getMethod().getMethodName();
-        test = extent.createTest(methodName).
-                assignDevice(properties.getProperty("device"));
-        if (result.isSuccess()){
-            test.log(Status.PASS, methodName+" - PASSED");
-        } else {
-            test.log(Status.FAIL, methodName+" - FAILED");
-        }
-        extent.flush();
+    public void tearDown() {
         driver.quit();
     }
 
