@@ -1,0 +1,120 @@
+{
+  "uid" : "de1904087a0dfeab",
+  "name" : "test_instrumentation_value_delete",
+  "fullName" : "testClasses.PositiveTestCases.test_instrumentation_value_delete",
+  "historyId" : "1de9ff996d8c94eeee5e06f3d5a7903a",
+  "time" : {
+    "start" : 1649594247843,
+    "stop" : 1649594252982,
+    "duration" : 5139
+  },
+  "description" : "TEST DESCRIPTION: Verify user can delete the last added value or cost of Instrumentation Material",
+  "descriptionHtml" : "<p>TEST DESCRIPTION: Verify user can delete the last added value or cost of Instrumentation Material</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 2,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ {
+    "name" : "testSetup",
+    "time" : {
+      "start" : 1649594244222,
+      "stop" : 1649594247834,
+      "duration" : 3612
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1649594252984,
+      "stop" : 1649594253677,
+      "duration" : 693
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "testClass",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_instrumentation_value_delete"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Example test run"
+  }, {
+    "name" : "suite",
+    "value" : "Simple Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "host",
+    "value" : "Nisha-Laptop"
+  }, {
+    "name" : "thread",
+    "value" : "17384@Nisha-Laptop.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "epic",
+    "value" : "FUNCTIONAL TEST"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "dfd2fcfa0ff41b5c",
+      "status" : "failed",
+      "statusDetails" : "The following asserts failed:\n\texpected [Test Projects] but found [Test Project]",
+      "time" : {
+        "start" : 1649593625682,
+        "stop" : 1649593630456,
+        "duration" : 4774
+      }
+    }, {
+      "uid" : "ec31e0c948cad8be",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649592265560,
+        "stop" : 1649592270205,
+        "duration" : 4645
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "de1904087a0dfeab.json",
+  "parameterValues" : [ ]
+}

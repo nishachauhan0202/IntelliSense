@@ -1,0 +1,119 @@
+{
+  "uid" : "fa3ac00103423bf6",
+  "name" : "test_atacamite_new_value",
+  "fullName" : "testClasses.PositiveTestCases.test_atacamite_new_value",
+  "historyId" : "cd05f46dccddc45b6916279c65fe5905",
+  "time" : {
+    "start" : 1649594208636,
+    "stop" : 1649594213483,
+    "duration" : 4847
+  },
+  "description" : "TEST DESCRIPTION: Verify user can add new value or cost to Atacamite Material",
+  "descriptionHtml" : "<p>TEST DESCRIPTION: Verify user can add new value or cost to Atacamite Material</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 2,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "testSetup",
+    "time" : {
+      "start" : 1649594202795,
+      "stop" : 1649594208460,
+      "duration" : 5665
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1649594213500,
+      "stop" : 1649594214161,
+      "duration" : 661
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "testClass",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_atacamite_new_value"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Example test run"
+  }, {
+    "name" : "suite",
+    "value" : "Simple Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "host",
+    "value" : "Nisha-Laptop"
+  }, {
+    "name" : "thread",
+    "value" : "17384@Nisha-Laptop.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "epic",
+    "value" : "FUNCTIONAL TEST"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "8c5ef5326ad67b73",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649593599320,
+        "stop" : 1649593605579,
+        "duration" : 6259
+      }
+    }, {
+      "uid" : "f5c09cf4e9521b6c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649592223339,
+        "stop" : 1649592228786,
+        "duration" : 5447
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "fa3ac00103423bf6.json",
+  "parameterValues" : [ ]
+}

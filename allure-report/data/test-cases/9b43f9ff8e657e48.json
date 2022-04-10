@@ -1,0 +1,120 @@
+{
+  "uid" : "9b43f9ff8e657e48",
+  "name" : "test_dashboard_title",
+  "fullName" : "testClasses.PositiveTestCases.test_dashboard_title",
+  "historyId" : "59f50445aa348a3519a060dd6821e0db",
+  "time" : {
+    "start" : 1649594217740,
+    "stop" : 1649594218707,
+    "duration" : 967
+  },
+  "description" : "TEST DESCRIPTION: Verify user is on specified Dashboard",
+  "descriptionHtml" : "<p>TEST DESCRIPTION: Verify user is on specified Dashboard</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 2,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ {
+    "name" : "testSetup",
+    "time" : {
+      "start" : 1649594214164,
+      "stop" : 1649594217735,
+      "duration" : 3571
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1649594218711,
+      "stop" : 1649594219338,
+      "duration" : 627
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "testClass",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_dashboard_title"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Example test run"
+  }, {
+    "name" : "suite",
+    "value" : "Simple Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "testClasses.PositiveTestCases"
+  }, {
+    "name" : "host",
+    "value" : "Nisha-Laptop"
+  }, {
+    "name" : "thread",
+    "value" : "17384@Nisha-Laptop.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "epic",
+    "value" : "SMOKE TEST"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "413aecf399007e17",
+      "status" : "failed",
+      "statusDetails" : "The following asserts failed:\n\texpected [Test Projects] but found [Test Project]",
+      "time" : {
+        "start" : 1649593610245,
+        "stop" : 1649593610725,
+        "duration" : 480
+      }
+    }, {
+      "uid" : "58ba56ace967f700",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649592233707,
+        "stop" : 1649592235325,
+        "duration" : 1618
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "9b43f9ff8e657e48.json",
+  "parameterValues" : [ ]
+}

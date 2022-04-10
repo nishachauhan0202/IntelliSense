@@ -1,0 +1,166 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "FUNCTIONAL TEST",
+    "children" : [ {
+      "name" : "test_atacamite_new_value",
+      "uid" : "fa3ac00103423bf6",
+      "parentUid" : "e5b1b7f02391e3050908996bb90e66b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594208636,
+        "stop" : 1649594213483,
+        "duration" : 4847
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_date_change",
+      "uid" : "68a63bfccaf75de6",
+      "parentUid" : "e5b1b7f02391e3050908996bb90e66b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594222495,
+        "stop" : 1649594226612,
+        "duration" : 4117
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : true,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_default_project",
+      "uid" : "94faeb9f9398e5fb",
+      "parentUid" : "e5b1b7f02391e3050908996bb90e66b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594230545,
+        "stop" : 1649594234053,
+        "duration" : 3508
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : true,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_instrumentation_new_value",
+      "uid" : "4f9fde08f0a346e8",
+      "parentUid" : "e5b1b7f02391e3050908996bb90e66b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594238582,
+        "stop" : 1649594243511,
+        "duration" : 4929
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : true,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_instrumentation_value_delete",
+      "uid" : "2775c1c507d55af6",
+      "parentUid" : "e5b1b7f02391e3050908996bb90e66b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594247843,
+        "stop" : 1649594252982,
+        "duration" : 5139
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : true,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_mesh_new_value",
+      "uid" : "350b80d2782e676b",
+      "parentUid" : "e5b1b7f02391e3050908996bb90e66b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594257234,
+        "stop" : 1649594261961,
+        "duration" : 4727
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : true,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_create_duplicate_dashboard_without_name",
+      "uid" : "76338ba942c2f14d",
+      "parentUid" : "e5b1b7f02391e3050908996bb90e66b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594266375,
+        "stop" : 1649594268165,
+        "duration" : 1790
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_instrumentation_new_value_negative",
+      "uid" : "295071398950b199",
+      "parentUid" : "e5b1b7f02391e3050908996bb90e66b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594272598,
+        "stop" : 1649594275043,
+        "duration" : 2445
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "e5b1b7f02391e3050908996bb90e66b8"
+  }, {
+    "name" : "SMOKE TEST",
+    "children" : [ {
+      "name" : "test_dashboard_title",
+      "uid" : "8584267dd89dc09b",
+      "parentUid" : "d1b1bd915043d5e32b7731a70c53f271",
+      "status" : "passed",
+      "time" : {
+        "start" : 1649594217740,
+        "stop" : 1649594218707,
+        "duration" : 967
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 2,
+      "retriesStatusChange" : true,
+      "parameters" : [ ]
+    } ],
+    "uid" : "d1b1bd915043d5e32b7731a70c53f271"
+  } ]
+}
